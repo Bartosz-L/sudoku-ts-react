@@ -1,10 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { ThemeProvider } from 'styled-components'
 
 import { unregister } from './core'
-import './index.css'
+import { GlobalStyles, theme } from './styles'
 
-ReactDOM.render(<div>hello world</div>, document.getElementById('root'))
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <GlobalStyles />
+    <div>hello world</div>
+  </ThemeProvider>,
+  document.getElementById('root')
+)
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

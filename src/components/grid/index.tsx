@@ -1,10 +1,11 @@
 import React, { FC, Children } from 'react'
-import { GRID } from 'typings'
-import { fillGrid } from 'utils'
+import { createFullGrid } from 'utils'
 import { Container, Row } from './styles'
 import Block from './block'
 
 const Grid: FC = () => {
+  const grid = createFullGrid()
+
   return (
     <Container>
       {Children.toArray(

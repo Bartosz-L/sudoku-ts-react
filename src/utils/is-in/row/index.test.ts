@@ -3,7 +3,7 @@ import { GRID } from 'typings'
 import isInRow from './'
 
 describe('isInRow', () => {
-  it('it returns true when value is in grid row', () => {
+  it('returns true when value is in grid row', () => {
     const grid: GRID = [
       [8, 4, 2, 6, 5, 1, 3, 9, 7],
       [5, 3, 7, 2, 8, 9, 6, 4, 1],
@@ -21,7 +21,7 @@ describe('isInRow', () => {
     expect(isInRow({ grid, row: 8, value: 9 })).toBeTruthy()
   })
 
-  it('it returns false when value is not in grid row', () => {
+  it('returns false when value is not in grid row', () => {
     const grid: GRID = [
       [8, 4, 2, 6, 5, 1, 3, 0, 7],
       [5, 3, 7, 2, 8, 9, 6, 4, 1],

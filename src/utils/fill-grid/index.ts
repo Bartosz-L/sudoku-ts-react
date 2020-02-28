@@ -1,17 +1,12 @@
 import { GRID, NUMBERS } from 'typings'
-import { shuffle, isInRow, isInCol } from 'utils'
-
-const gridTemplate = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0],
-]
+import {
+  shuffle,
+  isInRow,
+  isInCol,
+  identifyWorkingSquare,
+  isInSquare,
+  checkGrid,
+} from 'utils'
 
 const numbers: NUMBERS[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -38,13 +33,17 @@ const fillGrid = (grid: GRID) => {
           // is it not in grid column?
 
           if (!isInCol({ col, grid, value })) {
+            const square = identifyWorkingSquare({ col, grid, row })
+
             // is it not in the grid square?
+            if (!isInSquare({ square, value })) {
+              grid[row][col] = value
 
-            grid[row][col] = value
-
-            // check grid if it is full, if yes, stop and return true
-
-            // otherwise we run fillGrid(grid) again
+              // check grid if it is full, if yes, stop and return true
+              if (checkGrid(grid)) return true
+              // otherwise we run fillGrid(grid) again
+              else if (fillGrid(grid)) return true
+            }
           }
         }
       }

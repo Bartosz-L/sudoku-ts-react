@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 interface IProps {
   active?: boolean
+  puzzle?: boolean
 }
 
 export const Container = styled.div<IProps>`
@@ -17,7 +18,7 @@ export const Container = styled.div<IProps>`
     flex-shrink: 0;
     flex-basis: 0;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: ${props.puzzle ? 'bold' : 'normal'};
     height: auto;
     justify-content: center;
     transition: ${props.theme.transition};

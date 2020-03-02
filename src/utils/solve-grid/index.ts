@@ -35,6 +35,7 @@ const solveGrid = (grid: GRID) => {
           }
         }
       }
+      break
     }
   }
 

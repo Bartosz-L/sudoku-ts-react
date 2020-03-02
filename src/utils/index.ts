@@ -6,5 +6,5 @@ export { default as identifySquare } from './identify-square'
 export { default as shuffle } from './shuffle'
 export { default as copyGrid } from './copy-grid'
 export { default as solveGrid } from './solve-grid'
-
+export { default as removeNumbers } from './remove-numbers'
 export * from './is-in'

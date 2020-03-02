@@ -17,12 +17,12 @@ interface IState {
 
 const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
   const state = useSelector<IReducer, IState>(
-    ({ challangeGrid, selectedBlock, workingGrid }) => ({
+    ({ challengeGrid, selectedBlock, workingGrid }) => ({
       isActive: selectedBlock
         ? selectedBlock[0] === rowIndex && selectedBlock[1] === colIndex
         : false,
       isPuzzle:
-        challangeGrid && challangeGrid[rowIndex][colIndex] !== 0 ? true : false,
+        challengeGrid && challengeGrid[rowIndex][colIndex] !== 0 ? true : false,
       value: workingGrid ? workingGrid[rowIndex][colIndex] : 0,
     })
   )

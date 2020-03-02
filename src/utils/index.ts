@@ -4,4 +4,7 @@ export { default as fillGrid } from './fill-grid'
 export { default as getRandomIndex } from './get-random-index'
 export { default as identifySquare } from './identify-square'
 export { default as shuffle } from './shuffle'
+export { default as copyGrid } from './copy-grid'
+export { default as solveGrid } from './solve-grid'
+
 export * from './is-in'

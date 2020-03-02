@@ -25,7 +25,7 @@ const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
   const dispatch = useDispatch<Dispatch<AnyAction>>()
 
   const handleClick = () => {
-    dispatch(selectBlock([rowIndex, colIndex]))
+    if (!state.isActive) dispatch(selectBlock([rowIndex, colIndex]))
   }
 
   return (

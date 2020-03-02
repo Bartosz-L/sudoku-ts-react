@@ -1,8 +1,9 @@
 import { GRID } from 'typings'
-import identifyWorkingSquare from './'
+
+import identifySquare from './'
 
 describe('identifySquare', () => {
-  it('identifies the correct square wit a given grid, row index and column index', () => {
+  it('identifies the correct square with a given grid, row index and column index', () => {
     const grid: GRID = [
       [8, 4, 2, 6, 5, 1, 3, 9, 7],
       [5, 3, 7, 2, 8, 0, 6, 4, 1],
@@ -15,19 +16,19 @@ describe('identifySquare', () => {
       [3, 1, 9, 3, 1, 7, 8, 5, 6],
     ]
 
-    expect(identifyWorkingSquare({ col: 2, grid, row: 2 })).toStrictEqual([
+    expect(identifySquare({ col: 2, grid, row: 2 })).toStrictEqual([
       [8, 4, 2],
       [5, 3, 7],
       [6, 9, 1],
     ])
 
-    expect(identifyWorkingSquare({ col: 5, grid, row: 5 })).toStrictEqual([
+    expect(identifySquare({ col: 5, grid, row: 5 })).toStrictEqual([
       [8, 4, 5],
       [1, 9, 2],
       [3, 7, 6],
     ])
 
-    expect(identifyWorkingSquare({ col: 8, grid, row: 8 })).toStrictEqual([
+    expect(identifySquare({ col: 8, grid, row: 8 })).toStrictEqual([
       [2, 3, 0],
       [7, 1, 4],
       [8, 5, 6],

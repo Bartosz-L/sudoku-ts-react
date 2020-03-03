@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
 
 import { Card, Content, Grid, NewButton, Numbers, Title } from 'components'
-import { unregister, configureStore } from 'core'
+import { configureStore, register } from 'core'
 import { GlobalStyles, theme } from 'styles'
 
 const store = configureStore()
@@ -29,4 +29,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-unregister()
+register()
